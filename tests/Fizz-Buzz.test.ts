@@ -1,3 +1,4 @@
+import FizzBuzz from '../src/Fizz-Buzz'
 describe('FizzBuzz:', () => {
     test('For multiple of Three print Fizz', () => {
         expect(FizzBuzz.parse(3)).toEqual('Fizz')
