@@ -19,4 +19,8 @@ describe('FizzBuzz:', () => {
     test('returns correct string', () => {
         expect(fizzBuzz.printNumbers(20)).toBe(expectedStringToTwenty)
     })
+
+    test('if number contains a Three print Fizz', () => {
+        expect(fizzBuzz.parse(23)).toEqual('Fizz')
+    })
 })
