@@ -5,14 +5,21 @@ export interface Rule {
 
 export class FizzRule implements Rule {
     public isValid(number: number) {
-        return number % 3 === 0
+        return this.isDivisibleByThree(number) || this.containsThree(number)
     }
 
     public getResult() {
         return 'Fizz'
     }
-}
 
+    private isDivisibleByThree(number: number) {
+        return number % 3 === 0
+    }
+
+    private containsThree(number: number): boolean {
+        return number.toString().includes('3')
+    }
+}
 export class BuzzRule implements Rule {
     public isValid(number: number) {
         return number % 5 === 0
