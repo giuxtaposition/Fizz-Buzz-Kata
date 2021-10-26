@@ -1,27 +1,26 @@
-export default class FizzBuzz {
-    static ARRAY_SIZE = 100
+import { BuzzRule, FizzBuzzRule, FizzRule, Rule } from './Fizz-Buzz-Rule'
 
-    static parse(number: number) {
-        if (this.divisibleByFifteen(number)) {
-            return 'FizzBuzz'
-        }
-        if (number % 3 === 0) {
-            return 'Fizz'
-        }
-        if (number % 5 === 0) {
-            return 'Buzz'
+export default class FizzBuzz {
+    private ARRAY_SIZE = 100
+    private rules: Rule[]
+
+    constructor() {
+        this.rules = [new FizzBuzzRule(), new FizzRule(), new BuzzRule()]
+    }
+
+    public parse(number: number): string {
+        for (const rule of this.rules) {
+            if (rule.isValid(number)) {
+                return rule.getResult()
+            }
         }
         return number.toString()
     }
 
-    private static divisibleByFifteen(number: number) {
-        return number % 15 === 0
-    }
-
-    static printNumbers(arraySize = FizzBuzz.ARRAY_SIZE) {
+    public printNumbers(arraySize = this.ARRAY_SIZE) {
         let result = ''
         for (let i = 1; i <= arraySize; i++) {
-            result += FizzBuzz.parse(i) + '\n'
+            result += this.parse(i) + '\n'
         }
         return result
     }
