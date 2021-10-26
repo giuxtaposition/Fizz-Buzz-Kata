@@ -22,11 +22,19 @@ export class FizzRule implements Rule {
 }
 export class BuzzRule implements Rule {
     public isValid(number: number) {
-        return number % 5 === 0
+        return this.divisibleByFive(number) || this.containsFive(number)
     }
 
     public getResult() {
         return 'Buzz'
+    }
+
+    private containsFive(number: number): boolean {
+        return number.toString().includes('5')
+    }
+
+    private divisibleByFive(number: number) {
+        return number % 5 === 0
     }
 }
 
