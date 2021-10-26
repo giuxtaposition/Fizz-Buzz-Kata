@@ -1,5 +1,5 @@
 import FizzBuzz from '../src/Fizz-Buzz'
-import { expectedStringToTwenty } from './ExpectedString'
+import { expectedString } from './ExpectedString'
 
 describe('FizzBuzz:', () => {
     const fizzBuzz = new FizzBuzz()
@@ -17,7 +17,7 @@ describe('FizzBuzz:', () => {
     })
 
     test('returns correct string', () => {
-        expect(fizzBuzz.printNumbers(20)).toBe(expectedStringToTwenty)
+        expect(fizzBuzz.printNumbers()).toBe(expectedString)
     })
 
     test('if number contains a Three print Fizz', () => {

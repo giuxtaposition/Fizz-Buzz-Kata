@@ -37,13 +37,3 @@ export class BuzzRule implements Rule {
         return number % 5 === 0
     }
 }
-
-export class FizzBuzzRule implements Rule {
-    public isValid(number: number) {
-        return number % 15 === 0
-    }
-
-    public getResult() {
-        return 'FizzBuzz'
-    }
-}
