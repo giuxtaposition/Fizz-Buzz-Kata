@@ -23,4 +23,8 @@ describe('FizzBuzz:', () => {
     test('if number contains a Three print Fizz', () => {
         expect(fizzBuzz.parse(23)).toEqual('Fizz')
     })
+
+    test('if number contains a Five print Buzz', () => {
+        expect(fizzBuzz.parse(52)).toEqual('Buzz')
+    })
 })
